@@ -32,24 +32,33 @@ body{
     justify-content: center;
     align-items: center;
     padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
 }
 .calculator{
     display: grid;
     grid-template-columns: 50% 50%;
     background-color: white;
     width: 800px;
+    height: 390px;
     border-radius: 10px;
     padding: 1.5rem;
 }
+/* right container */
+
 .green-container{
+    position: relative;
     height: 100%;
     background-color: var(--v-dark-cyan);
     border-radius: 10px;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 .show-total, .show-total-per{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1rem 0.5rem;
 }
 .show-total p,.show-total-per p{
@@ -61,16 +70,46 @@ body{
     color: var(--light-grayish-cyan-2);
 }
 #total{
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: var(--strong-cyan);
+    
 }
 .reset{
-    width: 100%;
+    position: absolute;
+    width: calc(100% - 1.2rem);
     text-align: center;
     height: 30px;
-    padding-top:  1.5rem;
+    padding: 1rem 1.5rem;
+    margin: 0 auto;
+    bottom: 25%;
+    align-self: center;
 }
+/* right container */
 
+/* left container */
+.left{
+    padding: 0 1rem;
+    padding-right: 1.7rem;
+}
+.container{
+    position: relative;
+    padding: 0.5rem 0.3rem;
+}
+.float{
+    position: absolute;
+    left: 15px;
+    bottom: 19px;
+}
+.input-title{
+    display: flex;
+    justify-content: space-between;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+/* left container */
 /* utilities */
 .py-1{
     padding: 0.5rem 0;
@@ -80,19 +119,37 @@ input[type=text]{
     -moz-appearance: none;
     -webkit-appearance: none;
     width: 100%;
-    height: 30px;
+    height: 38px;
     direction: rtl;
     font-size: 1.2rem;
     font-family: inherit;
     font-weight: 700;
     color: var(--v-dark-cyan);
     border: 1px solid white;
-    border-radius: 2px;
-    outline: 1.5px solid var(--v-dark-cyan);
+    border-radius: 6px;
+    outline: none;
     background-color: var(--light-grayish-cyan-2);
+    padding-right: 0.5rem;
 }
 input[type=text]:nth-child(2){
     background-color: white;
+}
+button{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--v-dark-cyan);
+    color: white;
+    height: 40px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
+button:last-child{
+    background-color: var(--light-grayish-cyan-2);
+    color: var(--dark-grayish-cyan);
 }
 .btn{
     margin-top: 1.5rem;
@@ -110,7 +167,14 @@ input[type=text]:nth-child(2){
     text-align: center;
     transition: all 500ms;
     text-transform: capitalize;
-    
+}
+.gray-l{
+    color: var(--dark-grayish-cyan);
+    font-weight: 700;
+}
+.error{
+    color: red;
+    visibility: hidden;
 }
 
 
