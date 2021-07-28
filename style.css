@@ -39,9 +39,10 @@ body{
     grid-template-columns: 50% 50%;
     background-color: white;
     width: 800px;
-    height: 390px;
-    border-radius: 10px;
+    height: 400px;
+    border-radius: 15px;
     padding: 1.5rem;
+    
 }
 /* right container */
 
@@ -64,9 +65,11 @@ body{
 .show-total p,.show-total-per p{
     font-size: 0.7rem;
     color: var(--dark-grayish-cyan-2);
+    font-weight: 700;
 }
 #tip{
     font-size: 0.9rem;
+    font-weight: 700;
     color: var(--light-grayish-cyan-2);
 }
 #total{
@@ -108,6 +111,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
+    padding: 1rem 0;
 }
 /* left container */
 /* utilities */
@@ -146,11 +150,14 @@ button{
     font-weight: 700;
     border: none;
     border-radius: 5px;
+    transition: all 200ms;
+    cursor: pointer;
 }
-button:last-child{
-    background-color: var(--light-grayish-cyan-2);
-    color: var(--dark-grayish-cyan);
+button:focus{
+    background-color: var(--strong-cyan);
+    color: var(--v-dark-cyan);
 }
+
 .btn{
     margin-top: 1.5rem;
     padding: 0.6rem 1rem;
@@ -168,6 +175,10 @@ button:last-child{
     transition: all 500ms;
     text-transform: capitalize;
 }
+.btn:hover{
+    background-color: var(--light-grayish-cyan);
+    color: var(--v-dark-cyan);
+}
 .gray-l{
     color: var(--dark-grayish-cyan);
     font-weight: 700;
@@ -175,6 +186,46 @@ button:last-child{
 .error{
     color: red;
     visibility: hidden;
+}
+
+/* media queries */
+
+@media (max-width:800px){
+    .wrapper{
+        padding: 0.5rem 1rem;
+    }
+    .calculator{
+        grid-template-columns: 1fr ;
+        width: 100%;
+        height: 100%;
+        padding: 1.5rem;
+        
+        
+    }
+    /* right container */
+    .right{
+        padding-top: 1.5rem;
+    }
+    .green-container{
+        height: 320px;
+        
+    }
+
+    /* right container */
+
+    /* left container */
+
+    .grid{
+        grid-template-columns: 1fr 1fr ;
+    }
+    /* left container */
+}
+
+@media (max-width: 385px){
+
+    .calculator{
+        min-width: 375px;
+    }
 }
 
 
